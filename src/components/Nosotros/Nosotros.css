@@ -11,6 +11,11 @@
 
 .nosotros__imagen-wrap {
   width: 100%;
+  order: 2;
+}
+
+.nosotros__contenido {
+  order: 1;
 }
 
 .nosotros__imagen {
@@ -75,12 +80,12 @@
     align-items: stretch;
   }
 
-  .nosotros__imagen {
-    aspect-ratio: auto;
-    min-height: 100%;
+  .nosotros__imagen-wrap {
+    order: 1;
   }
 
   .nosotros__contenido {
+    order: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,6 +96,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1.5rem 2rem;
+  }
+
+  .nosotros__imagen {
+    aspect-ratio: auto;
+    min-height: 100%;
   }
 }
 

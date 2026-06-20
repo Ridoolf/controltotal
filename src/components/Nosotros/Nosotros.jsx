@@ -59,7 +59,16 @@ function Nosotros() {
                 {nosotros.habilitacion.registros.map((registro) => (
                   <li key={registro.numero}>
                     <span className="nosotros__registro-num">N° {registro.numero}</span>
-                    <span className="nosotros__registro-act">{registro.actividad}</span>
+                    {registro.saltoDespuesDe ? (
+                      <span className="nosotros__registro-act">
+                        {registro.saltoDespuesDe}
+                        <span className="nosotros__registro-salto">
+                          {registro.actividad.replace(`${registro.saltoDespuesDe} `, '')}
+                        </span>
+                      </span>
+                    ) : (
+                      <span className="nosotros__registro-act">{registro.actividad}</span>
+                    )}
                   </li>
                 ))}
               </ul>

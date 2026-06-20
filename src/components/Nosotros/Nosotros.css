@@ -149,11 +149,8 @@
 }
 
 .nosotros__registros li {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem 1rem;
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .nosotros__registro-num {
@@ -162,11 +159,22 @@
   color: var(--rojo);
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  margin-right: 0.4rem;
 }
 
 .nosotros__registro-act {
   color: var(--negro);
   font-weight: 500;
+}
+
+.nosotros__registro-salto::before {
+  content: ' ';
+}
+
+@media (max-width: 767px) {
+  .nosotros__registro-salto {
+    display: block;
+  }
 }
 
 @media (min-width: 768px) {

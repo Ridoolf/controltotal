@@ -42,7 +42,11 @@ export const nosotros = {
       'Nuestra empresa se encuentra habilitada por el Gobierno de la Ciudad de Buenos Aires. Actuamos a través de A.P.R.A. (Agencia de Protección Ambiental) con los siguientes registros:',
     registros: [
       { numero: '1244', actividad: 'Control de plagas' },
-      { numero: '917', actividad: 'Limpieza de tanques de agua' },
+      {
+        numero: '917',
+        actividad: 'Limpieza de tanques de agua',
+        saltoDespuesDe: 'Limpieza de',
+      },
     ],
   },
 }

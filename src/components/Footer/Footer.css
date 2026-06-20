@@ -1,0 +1,50 @@
+.footer {
+  padding: 2.5rem 0;
+  background: var(--negro);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.footer__nombre {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  color: var(--blanco);
+  margin-bottom: 0.25rem;
+}
+
+.footer__sub {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.footer__ig {
+  display: inline-block;
+  color: var(--rojo);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.footer__ig:hover {
+  text-decoration: underline;
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 0.5rem;
+}
+
+.footer__dev {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer__dev a {
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.2s;
+}
+
+.footer__dev a:hover {
+  color: var(--rojo);
+}

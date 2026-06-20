@@ -1,0 +1,128 @@
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__fondo {
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero__contenido {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  animation: hero-entrar 0.65s ease both;
+}
+
+@keyframes hero-entrar {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__contenido {
+    animation: none;
+  }
+}
+
+.hero__texto {
+  max-width: 600px;
+}
+
+.hero__bienvenida {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero__titulo {
+  color: var(--blanco);
+  font-size: 2rem;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+}
+
+.hero__descripcion {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.hero__cta-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.hero__cta:hover {
+  background: #b71c1c;
+}
+
+.hero__logo {
+  width: 160px;
+  height: auto;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.hero__curva {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--blanco);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+@media (min-width: 768px) {
+  .hero__contenido {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero__titulo {
+    font-size: 2.75rem;
+  }
+
+  .hero__logo {
+    width: 260px;
+    align-self: center;
+  }
+}

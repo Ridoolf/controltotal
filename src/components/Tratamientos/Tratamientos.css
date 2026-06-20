@@ -1,0 +1,55 @@
+.tratamientos {
+  background: var(--rojo);
+  padding: 4rem 0;
+  color: var(--blanco);
+}
+
+.tratamientos__titulo {
+  color: var(--blanco);
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.tratamientos__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tratamiento-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.reveal.tratamiento-item:last-child {
+  border-bottom: none;
+}
+
+.tratamiento-item__nombre {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  color: var(--blanco);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.tratamiento-item__descripcion {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .tratamiento-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .tratamientos__titulo {
+    font-size: 2rem;
+  }
+}

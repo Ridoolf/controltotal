@@ -233,4 +233,6 @@ export const contacto = {
     },
   ],
   email: 'controltotaldesinfeccion@gmail.com',
+  notaLegal:
+    'Por quejas, denuncias y/o sugerencias dirigirse a la Dirección General de Control Ambiental, Av. Escalada & Castañares, Paseo Malvinas, CIFA (Centro de Información y Formación Ambiental) de 8 a 14hs. o llamar al 147.',
 }

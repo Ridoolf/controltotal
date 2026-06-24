@@ -151,6 +151,18 @@
   border: 0;
 }
 
+.contacto__nota-legal {
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--gris);
+  text-align: center;
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (min-width: 768px) {
   .contacto__ubicacion-grid {
     grid-template-columns: 1fr 1.4fr;

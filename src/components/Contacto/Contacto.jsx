@@ -93,6 +93,10 @@ function Contacto() {
           ))}
           </div>
         </Reveal>
+
+        <Reveal delay={120}>
+          <p className="contacto__nota-legal">{contacto.notaLegal}</p>
+        </Reveal>
       </div>
     </section>
   )

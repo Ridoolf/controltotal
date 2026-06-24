@@ -65,7 +65,7 @@ function Contacto() {
           {contacto.sedes.map((sede) => (
             <div key={sede.nombre} className="contacto__ubicacion-grid">
               <div className="contacto__ubicacion-info">
-                <h3 className="contacto__subtitulo">Encontranos en</h3>
+                <h3 className="contacto__subtitulo">{contacto.ubicacionTitulo}</h3>
                 <div className="contacto__sede">
                   <strong>{sede.nombre}</strong>
                   <p>{sede.direccion}</p>

@@ -19,8 +19,11 @@
 }
 
 .nosotros__imagen {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
   border-left: 5px solid var(--rojo);
 }
 
@@ -39,17 +42,43 @@
   margin-bottom: 1rem;
 }
 
-.nosotros__resaltado {
-  color: var(--negro);
-  font-weight: 600;
-}
-
-.nosotros__resaltado--rojo {
-  color: var(--rojo);
-}
-
 .nosotros__cuerpo p:last-child {
   margin-bottom: 0;
+}
+
+.nosotros__cuerpo-extra p:last-child {
+  margin-bottom: 1rem;
+}
+
+.nosotros__ver-mas {
+  margin-top: 0.25rem;
+  padding: 0.15rem 0 2px;
+  border: none;
+  border-bottom: 2px solid var(--rojo);
+  background: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rojo);
+  cursor: pointer;
+  transition:
+    color var(--hover-duracion) var(--hover-ease),
+    border-color var(--hover-duracion) var(--hover-ease),
+    background-color var(--hover-duracion) var(--hover-ease);
+}
+
+.nosotros__ver-mas:hover {
+  color: var(--rojo-oscuro);
+  border-color: var(--rojo-oscuro);
+  background-color: rgba(211, 47, 47, 0.08);
+}
+
+.nosotros__ver-mas:active {
+  color: #9a1818;
+  border-color: #9a1818;
+  background-color: rgba(211, 47, 47, 0.14);
 }
 
 .nosotros__destacados {
@@ -77,18 +106,19 @@
   .nosotros__contenedor {
     grid-template-columns: 2fr 3fr;
     gap: 3.5rem;
-    align-items: stretch;
+    align-items: start;
   }
 
   .nosotros__imagen-wrap {
     order: 1;
+    align-self: start;
   }
 
   .nosotros__contenido {
     order: 2;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 1rem 0;
   }
 
@@ -96,11 +126,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1.5rem 2rem;
-  }
-
-  .nosotros__imagen {
-    aspect-ratio: auto;
-    min-height: 100%;
   }
 }
 
@@ -110,8 +135,129 @@
   }
 }
 
+.nosotros__primera-visita {
+  margin-top: 2.5rem;
+  padding: 2.5rem 0;
+  background: var(--gris-claro);
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.nosotros__primera-visita-encabezado {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+}
+
+.nosotros__primera-visita-titulo {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  padding: 0 1.5rem 0.75rem;
+  border-bottom: 3px solid var(--rojo);
+  display: inline-block;
+}
+
+.nosotros__primera-visita-subtitulo {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--gris);
+  margin: 0;
+}
+
+.nosotros__primera-visita-pasos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.nosotros__primera-visita-paso {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--blanco);
+  padding: 1.25rem 1.25rem 1.25rem 1rem;
+  border: 1px solid #e8e8e8;
+  border-left: 3px solid var(--rojo);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.nosotros__primera-visita-numero {
+  flex-shrink: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(211, 47, 47, 0.25);
+  min-width: 2rem;
+}
+
+.nosotros__primera-visita-paso-contenido p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gris);
+  margin: 0;
+}
+
+.nosotros__primera-visita-paso-titulo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--negro);
+  margin: 0 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .nosotros__primera-visita {
+    margin-top: 3rem;
+    padding: 3rem 0;
+  }
+
+  .nosotros__primera-visita-encabezado {
+    margin-bottom: 2.5rem;
+  }
+
+  .nosotros__primera-visita-titulo {
+    font-size: 1.6rem;
+    padding-inline: 2rem;
+  }
+
+  .nosotros__primera-visita-subtitulo {
+    font-size: 1rem;
+  }
+
+  .nosotros__primera-visita-pasos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .nosotros__primera-visita-paso {
+    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+    height: 100%;
+  }
+
+  .nosotros__primera-visita-paso-contenido p {
+    font-size: 0.95rem;
+  }
+
+  .nosotros__primera-visita-paso-titulo {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nosotros__primera-visita-titulo {
+    font-size: 1.75rem;
+    padding-inline: 2.5rem;
+  }
+}
+
 .nosotros__habilitacion {
   margin-top: 3rem;
+  margin-bottom: 0.5rem;
   padding: 1.5rem;
   background: var(--gris-claro);
   border-left: 4px solid var(--rojo);

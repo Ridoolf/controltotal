@@ -4,6 +4,7 @@
 
 :root {
   --rojo: #d32f2f;
+  --rojo-oscuro: #b71c1c;
   --negro: #1a1a1a;
   --gris: #444444;
   --gris-claro: #f5f5f5;
@@ -11,6 +12,10 @@
   --whatsapp: #25d366;
   --max-ancho: 1100px;
   --navbar-altura: 70px;
+  --hover-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --hover-duracion: 0.22s;
+  --hover-sombra: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --hover-sombra-roja: 0 6px 20px rgba(211, 47, 47, 0.35);
 }
 
 *,
@@ -48,6 +53,31 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button {
+    transition-duration: var(--hover-duracion);
+    transition-timing-function: var(--hover-ease);
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--rojo);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a,
+  button {
+    transition: none !important;
+  }
+}
+
 h1,
 h2,
 h3 {
@@ -66,6 +96,22 @@ p {
 
 p:last-child {
   margin-bottom: 0;
+}
+
+.texto-resaltado {
+  font-weight: 600;
+}
+
+.hero__descripcion .texto-resaltado,
+.tratamiento-item__descripcion .texto-resaltado {
+  color: var(--blanco);
+}
+
+.nosotros__cuerpo .texto-resaltado,
+.nosotros__primera-visita-paso-contenido .texto-resaltado,
+.nosotros__primera-visita-subtitulo .texto-resaltado,
+.nosotros__habilitacion-texto .texto-resaltado {
+  color: var(--negro);
 }
 
 /* Contenedor reutilizable */

@@ -1,5 +1,6 @@
 import { tratamientos } from '../../data/content'
 import Reveal from '../Reveal/Reveal'
+import TextoConResaltado from '../TextoConResaltado/TextoConResaltado'
 import './Tratamientos.css'
 
 function Tratamientos() {
@@ -19,7 +20,9 @@ function Tratamientos() {
               className="tratamiento-item"
             >
               <h3 className="tratamiento-item__nombre">{item.nombre}</h3>
-              <p className="tratamiento-item__descripcion">{item.descripcion}</p>
+              <p className="tratamiento-item__descripcion">
+                <TextoConResaltado contenido={item.descripcion} />
+              </p>
             </Reveal>
           ))}
         </ul>

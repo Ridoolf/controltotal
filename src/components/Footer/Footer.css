@@ -22,10 +22,14 @@
   color: var(--rojo);
   font-weight: 500;
   margin-bottom: 1.5rem;
+  padding: 0.15rem 0;
+  transition: color var(--hover-duracion) var(--hover-ease);
 }
 
 .footer__ig:hover {
+  color: #ff8a80;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer__copy {
@@ -42,9 +46,12 @@
 
 .footer__dev a {
   color: rgba(255, 255, 255, 0.55);
-  transition: color 0.2s;
+  padding: 0.1rem 0;
+  transition: color var(--hover-duracion) var(--hover-ease);
 }
 
 .footer__dev a:hover {
   color: var(--rojo);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

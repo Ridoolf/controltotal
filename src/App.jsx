@@ -2,6 +2,7 @@ import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Nosotros from './components/Nosotros/Nosotros'
 import Tratamientos from './components/Tratamientos/Tratamientos'
+import Resenas from './components/Resenas/Resenas'
 import Contacto from './components/Contacto/Contacto'
 import Footer from './components/Footer/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat'
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <Nosotros />
         <Tratamientos />
+        <Resenas />
         <Contacto />
       </main>
       <Reveal>

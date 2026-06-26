@@ -104,31 +104,31 @@ function Nosotros() {
       </Reveal>
 
       <Reveal delay={100}>
-        <div className="nosotros__primera-visita">
-          <div className="contenedor">
-            <header className="nosotros__primera-visita-encabezado">
-              <h3 className="nosotros__primera-visita-titulo">{nosotros.primeraVisita.titulo}</h3>
-              <p className="nosotros__primera-visita-subtitulo">
-                <TextoConResaltado contenido={nosotros.primeraVisita.subtitulo} />
-              </p>
-            </header>
+        <div className="contenedor nosotros__primera-visita">
+          <header className="nosotros__primera-visita-encabezado">
+            <h3 className="nosotros__primera-visita-titulo">{nosotros.primeraVisita.titulo}</h3>
+            <p className="nosotros__primera-visita-subtitulo">
+              <TextoConResaltado contenido={nosotros.primeraVisita.subtitulo} />
+            </p>
+          </header>
 
-            <ol className="nosotros__primera-visita-pasos">
-              {nosotros.primeraVisita.pasos.map((paso, i) => (
-                <li key={paso.titulo} className="nosotros__primera-visita-paso">
+          <ol className="nosotros__primera-visita-pasos">
+            {nosotros.primeraVisita.pasos.map((paso, i) => (
+              <li key={paso.titulo} className="nosotros__primera-visita-paso">
+                <div className="nosotros__primera-visita-marcador">
                   <span className="nosotros__primera-visita-numero" aria-hidden="true">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <div className="nosotros__primera-visita-paso-contenido">
-                    <h4 className="nosotros__primera-visita-paso-titulo">{paso.titulo}</h4>
-                    <p>
-                      <TextoConResaltado contenido={paso.texto} />
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
+                </div>
+                <div className="nosotros__primera-visita-paso-contenido">
+                  <h4 className="nosotros__primera-visita-paso-titulo">{paso.titulo}</h4>
+                  <p>
+                    <TextoConResaltado contenido={paso.texto} />
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </Reveal>
     </section>

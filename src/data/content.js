@@ -122,15 +122,7 @@ export const nosotros = {
           { resaltado: 'brindo recomendaciones prácticas y personalizadas' },
           ' orientadas a la prevención y el control. Considero que el éxito del tratamiento depende del ',
           { resaltado: 'trabajo conjunto' },
-          ' entre el cliente y yo, por lo que promuevo una colaboración activa para lograr una solución eficaz y duradera.',
-        ],
-      },
-      {
-        titulo: 'Prevención a largo plazo',
-        texto: [
-          'Mi objetivo es no solamente eliminar la plaga existente, sino también ',
-          { resaltado: 'prevenir su reaparición' },
-          ' mediante medidas correctivas, hábitos adecuados de higiene y mantenimiento.',
+          ' entre el cliente y nosotros',
         ],
       },
     ],
@@ -156,9 +148,14 @@ export const nosotros = {
 
 export const tratamientos = {
   titulo: 'Tratamientos',
+  subtitulo: 'Control de plagas, desinfección y saneamiento para hogares, comercios e industria.',
+  verMas: 'Ver más',
+  imagenPorDefecto: '/assets/images/nosotros.png',
+  imagenAlternativa: '/assets/images/hero-fondo.png',
   items: [
     {
       nombre: 'Desinfección',
+      imagen: '/assets/images/nosotros.png',
       descripcion: [
         'Se utilizan ',
         { resaltado: 'amónios cuaternarios' },
@@ -186,7 +183,7 @@ export const tratamientos = {
         'Control de plagas en espacios corporativos. ',
         { resaltado: 'Tratamientos programados' },
         ' para mantener ambientes de trabajo ',
-        { resaltado: 'libres de insectos y roedores' },
+        { resaltado: 'libres de insectos.' },
         '.',
       ],
     },
@@ -195,7 +192,7 @@ export const tratamientos = {
       descripcion: [
         { resaltado: 'Especialistas en el sector gastronómico' },
         ': control de plagas y saneamiento para restaurantes, bares, cafeterías y cocinas industriales. Tratamientos ',
-        { resaltado: 'inodoros, seguros y altamente residuales' },
+        { resaltado: 'inoloros, seguros y altamente residuales' },
         ' que no interrumpen la actividad, con productos de última generación y estándares de ',
         { resaltado: 'higiene alimentaria' },
         '.',
@@ -215,6 +212,88 @@ export const tratamientos = {
         { resaltado: 'Tratamiento integral' },
         ' para hogares, hoteles, clínicas y comercios. Pulgas, cucarachas, hormigas, mosquitos y más.',
       ],
+    },
+  ],
+}
+
+export const resenas = {
+  titulo: 'Lo que dicen nuestros clientes',
+  rating: 5,
+  total: 10,
+  ratingTexto: '5.0 en Google',
+  verEnMaps: 'Ver en Google Maps',
+  mapsUrl:
+    'https://www.google.com/maps/search/?api=1&query=Control+Total+Fumigaciones+Paz+CABA+rese%C3%B1as',
+  items: [
+    {
+      nombre: 'Agustín Benítez',
+      meta: '10 reseñas',
+      fecha: 'Hace 2 años',
+      estrellas: 5,
+      texto:
+        'Excelente servicio!! Me solucionaron una plaga que pasaron 4 empresas que solo me sacaron dinero. Ellos en solo un mes lo solucionaron. Super recomendable. Gracias.',
+    },
+    {
+      nombre: 'Alejandra Padilla',
+      meta: '5 reseñas',
+      fecha: 'Hace 3 meses',
+      estrellas: 5,
+      texto:
+        'Servicio excepcional. El producto que utiliza erradicó a los bichos en la primera pasada que hizo en la oficina. Muy conforme y los súper recomiendo. Me pasó el contacto mi amiga que tenía también una plaga y los fumigadores anteriores no se lo resolvían. Son excelentes.',
+    },
+    {
+      nombre: 'Andrea',
+      meta: 'Local Guide · 46 reseñas',
+      fecha: 'Hace 3 meses',
+      estrellas: 5,
+      texto:
+        'Excelente servicio. Hace años que confiamos en ellos para la fumigación y siempre han respondido con puntualidad y eficacia. La comunicación es muy fluida y el asesoramiento técnico es de primera. Es un placer trabajar con gente tan comprometida. Sumamente recomendable.',
+    },
+    {
+      nombre: 'Franco Terrile',
+      meta: '5 reseñas',
+      fecha: 'Hace 3 meses',
+      estrellas: 5,
+      texto:
+        'En mi caso, que tengo negocio de comidas, fue la solución definitiva. Luego de probar con 3 empresas de fumigación, me recomendaron Control Total. Con mucho conocimiento y mucho compromiso eliminaron en su totalidad la plaga de cucarachas que parecía imposible. Fueron 45 días intensos de compromiso mutuo entre nosotros y la empresa. Eternamente agradecidos.',
+    },
+    {
+      nombre: 'Maximiliano Kowalski',
+      meta: '1 reseña',
+      fecha: 'Hace 3 meses',
+      estrellas: 5,
+      texto:
+        'Somos una clínica de la salud y el servicio y profesionalismo de Control Total no tiene comparación. Realizamos fumigaciones y limpiezas de tanques de agua con ellos y siempre fue una respuesta inmediata y un trabajo impoluto. Super recomendable.',
+    },
+    {
+      nombre: 'Joaco Pelaez',
+      meta: '7 reseñas',
+      fecha: 'Hace 3 meses',
+      estrellas: 5,
+      texto:
+        'Excelente servicio de fumigación que brinda Paz. Muy profesional y efectivo. Mata cualquier plaga.',
+    },
+    {
+      nombre: 'Milagros Martínez Aguirre',
+      meta: 'Local Guide · 23 reseñas',
+      fecha: 'Hace 2 años',
+      estrellas: 5,
+      texto: 'Excelente servicio. Muy profesional. Recomiendo.',
+    },
+    {
+      nombre: 'Ramón Andrés Arriola',
+      meta: '2 reseñas',
+      fecha: 'Hace 3 meses',
+      estrellas: 5,
+      texto: 'Excelente servicio, estoy muy conforme, la mejor.',
+    },
+    {
+      nombre: 'Sebastian',
+      meta: '13 reseñas',
+      fecha: 'Hace 2 años',
+      estrellas: 5,
+      texto:
+        'Excelente servicio, pudieron eliminar las cucarachas coloradas chiquitas. Ojalá te hubiera conocido antes. Gracias.',
     },
   ],
 }

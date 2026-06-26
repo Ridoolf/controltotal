@@ -1,4 +1,5 @@
 import { site } from '../../data/content'
+import { IconInstagram } from '../Icons/LinkIcons'
 import './Footer.css'
 
 function Footer() {
@@ -15,16 +16,18 @@ function Footer() {
           rel="noopener noreferrer"
           className="footer__ig"
         >
+          <span className="footer__ig-icono enlace-btn__icono" aria-hidden="true">
+            <IconInstagram />
+          </span>
           @{site.instagram}
         </a>
         <p className="footer__copy">&copy; {year} {site.nombre}. Todos los derechos reservados.</p>
         <span className="footer__dev">
           Desarrollado por{' '}
-          <a
-            href={site.desarrollador.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={site.desarrollador.url} target="_blank" rel="noopener noreferrer">
+            <span className="footer__dev-icono enlace-btn__icono" aria-hidden="true">
+              <IconInstagram />
+            </span>
             {site.desarrollador.nombre}
           </a>
         </span>

@@ -136,30 +136,27 @@
 }
 
 .nosotros__primera-visita {
-  margin-top: 2.5rem;
-  padding: 2.5rem 0;
-  background: var(--gris-claro);
-  border-top: 1px solid #e8e8e8;
-  border-bottom: 1px solid #e8e8e8;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #ddd;
 }
 
 .nosotros__primera-visita-encabezado {
-  text-align: center;
-  max-width: 40rem;
-  margin: 0 auto 2rem;
+  max-width: 36rem;
+  margin-bottom: 2.5rem;
 }
 
 .nosotros__primera-visita-titulo {
-  font-size: 1.35rem;
-  margin-bottom: 0.75rem;
-  padding: 0 1.5rem 0.75rem;
+  font-size: 1.75rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.75rem;
   border-bottom: 3px solid var(--rojo);
   display: inline-block;
 }
 
 .nosotros__primera-visita-subtitulo {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--gris);
   margin: 0;
 }
@@ -168,41 +165,67 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 1rem;
+  position: relative;
 }
 
 .nosotros__primera-visita-paso {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  background: var(--blanco);
-  padding: 1.25rem 1.25rem 1.25rem 1rem;
-  border: 1px solid #e8e8e8;
-  border-left: 3px solid var(--rojo);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0 1.5rem;
+  padding-bottom: 2.25rem;
+}
+
+.nosotros__primera-visita-paso:last-child {
+  padding-bottom: 0;
+}
+
+.nosotros__primera-visita-paso:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 1.1875rem;
+  top: 2.5rem;
+  bottom: 0;
+  width: 2px;
+  background: #e0e0e0;
+  transform: translateX(-50%);
+}
+
+.nosotros__primera-visita-marcador {
+  position: relative;
+  z-index: 1;
 }
 
 .nosotros__primera-visita-numero {
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  background: var(--rojo);
+  color: var(--blanco);
   font-family: 'Oswald', sans-serif;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
   line-height: 1;
-  color: rgba(211, 47, 47, 0.25);
-  min-width: 2rem;
+}
+
+.nosotros__primera-visita-paso-contenido {
+  min-width: 0;
+  padding-top: 0.2rem;
 }
 
 .nosotros__primera-visita-paso-contenido p {
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.65;
   color: var(--gris);
   margin: 0;
 }
 
 .nosotros__primera-visita-paso-titulo {
   font-family: 'Oswald', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -212,46 +235,68 @@
 
 @media (min-width: 768px) {
   .nosotros__primera-visita {
-    margin-top: 3rem;
-    padding: 3rem 0;
+    margin-top: 4rem;
+    padding-top: 3rem;
   }
 
   .nosotros__primera-visita-encabezado {
-    margin-bottom: 2.5rem;
-  }
-
-  .nosotros__primera-visita-titulo {
-    font-size: 1.6rem;
-    padding-inline: 2rem;
-  }
-
-  .nosotros__primera-visita-subtitulo {
-    font-size: 1rem;
+    margin-bottom: 3rem;
   }
 
   .nosotros__primera-visita-pasos {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 2.5rem;
+    align-items: start;
   }
 
   .nosotros__primera-visita-paso {
-    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
-    height: 100%;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-bottom: 0;
+  }
+
+  .nosotros__primera-visita-paso:not(:last-child)::before {
+    top: 1.1875rem;
+    left: 2.375rem;
+    right: -2.5rem;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+    transform: none;
+    background: #e0e0e0;
+  }
+
+  .nosotros__primera-visita-marcador {
+    margin-bottom: 1.25rem;
+  }
+
+  .nosotros__primera-visita-paso-contenido {
+    padding-top: 0;
+    padding-right: 0.5rem;
   }
 
   .nosotros__primera-visita-paso-contenido p {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .nosotros__primera-visita-paso-titulo {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.65rem;
   }
 }
 
 @media (min-width: 1024px) {
   .nosotros__primera-visita-titulo {
-    font-size: 1.75rem;
-    padding-inline: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .nosotros__primera-visita-pasos {
+    gap: 0 3rem;
+  }
+
+  .nosotros__primera-visita-paso:not(:last-child)::before {
+    right: -3rem;
   }
 }
 

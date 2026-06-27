@@ -72,7 +72,7 @@ export const nosotros = {
       { resaltado: 'satisfacción y conformidad' },
       ' de quienes confían en nosotros. Por ello, trabajamos con ',
       { resaltado: 'responsabilidad, seriedad y compromiso' },
-      ', ofreciendo soluciones prácticas y eficaces y un ',
+      ', ofreciendo soluciones prácticas, eficaces y un ',
       { resaltado: 'seguimiento continuo' },
       ' que garantice los mejores resultados.',
     ],

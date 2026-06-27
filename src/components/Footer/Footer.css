@@ -49,8 +49,13 @@
 }
 
 .footer__dev {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
   font-size: 0.75rem;
+  line-height: 1;
   color: rgba(255, 255, 255, 0.4);
 }
 

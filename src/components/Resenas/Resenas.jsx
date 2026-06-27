@@ -98,17 +98,17 @@ function Resenas() {
     }
   }, [aplicarTransform, normalizarOffset])
 
-  const onPointerDown = useCallback(
-    (event) => {
-      draggingRef.current = true
-      dragStartRef.current = {
-        x: event.clientX,
-        offset: offsetRef.current,
-      }
-      event.currentTarget.setPointerCapture(event.pointerId)
-    },
-    [],
-  )
+  const onPointerDown = useCallback((event) => {
+    if (event.pointerType === 'mouse' && event.button !== 0) return
+
+    draggingRef.current = true
+    dragStartRef.current = {
+      x: event.clientX,
+      offset: offsetRef.current,
+    }
+
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }, [])
 
   const onPointerMove = useCallback(
     (event) => {
@@ -123,10 +123,26 @@ function Resenas() {
   )
 
   const finalizarArrastre = useCallback((event) => {
+    if (!draggingRef.current) return
+
     draggingRef.current = false
 
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+  }, [])
+
+  useEffect(() => {
+    const soltarArrastre = () => {
+      draggingRef.current = false
+    }
+
+    window.addEventListener('pointerup', soltarArrastre)
+    window.addEventListener('pointercancel', soltarArrastre)
+
+    return () => {
+      window.removeEventListener('pointerup', soltarArrastre)
+      window.removeEventListener('pointercancel', soltarArrastre)
     }
   }, [])
 

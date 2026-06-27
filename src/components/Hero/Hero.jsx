@@ -27,6 +27,8 @@ function Hero() {
           </h1>
           <p className="hero__tagline">{hero.tagline}</p>
           <p className="hero__descripcion">
+            <TextoConResaltado contenido={hero.descripcionIntro} />
+            <br />
             <TextoConResaltado contenido={hero.descripcion} />
           </p>
           <a href={whatsappUrl} className="hero__cta" target="_blank" rel="noopener noreferrer">

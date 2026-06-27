@@ -25,9 +25,12 @@ export const hero = {
     linea1: 'Control Total',
     linea2: 'Fumigaciones Paz',
   },
-  descripcion: [
+  descripcionIntro: [
     { resaltado: 'Manejo integral de plagas' },
-    '. Realizo tratamientos con ',
+    '.',
+  ],
+  descripcion: [
+    'Realizamos tratamientos con ',
     { resaltado: 'productos residuales e inoloros' },
     '.',
   ],
@@ -52,7 +55,7 @@ export const nosotros = {
       ', comprometida con brindar un servicio ',
       { resaltado: 'profesional, confiable y de calidad' },
       '. En cada servicio, ',
-      { resaltado: 'yo me ocupo personalmente de la visita, el tratamiento y el seguimiento' },
+      { resaltado: 'me ocupo personalmente de la visita, el tratamiento y el seguimiento' },
       ', con el respaldo de un equipo reducido y la habilitación correspondiente.',
     ],
     [
@@ -69,7 +72,7 @@ export const nosotros = {
       { resaltado: 'satisfacción y conformidad' },
       ' de quienes confían en nosotros. Por ello, trabajamos con ',
       { resaltado: 'responsabilidad, seriedad y compromiso' },
-      ', ofreciendo soluciones eficaces y un ',
+      ', ofreciendo soluciones prácticas y eficaces y un ',
       { resaltado: 'seguimiento continuo' },
       ' que garantice los mejores resultados.',
     ],
@@ -98,11 +101,13 @@ export const nosotros = {
       {
         titulo: 'Inspección y tratamiento',
         texto: [
-          'En la primera visita realizo una ',
+          'En la primera visita, junto con la ',
+          { resaltado: 'desinfección que corresponde' },
+          ', realizo una ',
           { resaltado: 'inspección detallada' },
-          ' de las instalaciones y, cuando corresponde, efectúo el ',
-          { resaltado: 'tratamiento inicial' },
-          ' de control de plagas o desinfección.',
+          ' de las instalaciones e informo las ',
+          { resaltado: 'acciones preventivas' },
+          ' para un servicio completo.',
         ],
       },
       {
@@ -150,6 +155,7 @@ export const tratamientos = {
   titulo: 'Tratamientos',
   subtitulo: 'Control de plagas, desinfección y saneamiento para hogares, comercios e industria.',
   verMas: 'Ver más',
+  verMenos: 'Ver menos',
   imagenPorDefecto: '/assets/images/nosotros.png',
   imagenAlternativa: '/assets/images/hero-fondo.png',
   items: [
@@ -210,7 +216,9 @@ export const tratamientos = {
       nombre: 'Control de Plagas',
       descripcion: [
         { resaltado: 'Tratamiento integral' },
-        ' para hogares, hoteles, clínicas y comercios. Pulgas, cucarachas, hormigas, mosquitos y más.',
+        ' para comercios, oficinas y administraciones de edificios. Control de ',
+        { resaltado: 'cucarachas, hormigas, pulgas, pulgas de papel, moscas, moscas de fruta, mosquitos y polillas' },
+        ', y de cualquier otra plaga que ingrese desde el exterior o por vías de tránsito.',
       ],
     },
   ],

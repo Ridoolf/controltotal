@@ -9,7 +9,22 @@ function Tratamientos() {
   const [activo, setActivo] = useState(null)
   const whatsappUrl = `https://wa.me/${site.whatsapp}`
 
-  const toggleCard = (index) => {
+  const abrirCard = (index) => {
+    setActivo(index)
+  }
+
+  const cerrarCard = () => {
+    setActivo(null)
+  }
+
+  const manejarClickCard = (index) => {
+    const esMobile = window.matchMedia('(max-width: 639px)').matches
+
+    if (esMobile) {
+      if (activo !== index) abrirCard(index)
+      return
+    }
+
     setActivo((prev) => (prev === index ? null : index))
   }
 
@@ -32,11 +47,17 @@ function Tratamientos() {
 
               return (
                 <Reveal key={item.nombre} as="li" delay={index * 35} className="tratamiento-card">
-                  <button
-                    type="button"
+                  <div
                     className={`tratamiento-card__btn${activo === index ? ' tratamiento-card__btn--activo' : ''}`}
+                    role="button"
+                    tabIndex={activo === index ? -1 : 0}
                     aria-expanded={activo === index}
-                    onClick={() => toggleCard(index)}
+                    onClick={() => manejarClickCard(index)}
+                    onKeyDown={(evento) => {
+                      if (evento.key !== 'Enter' && evento.key !== ' ') return
+                      evento.preventDefault()
+                      manejarClickCard(index)
+                    }}
                   >
                     <span className="tratamiento-card__media" aria-hidden="true">
                       <img
@@ -57,8 +78,18 @@ function Tratamientos() {
                       <span className="tratamiento-card__detalle-texto">
                         <TextoConResaltado contenido={item.descripcion} />
                       </span>
+                      <button
+                        type="button"
+                        className="tratamiento-card__menos"
+                        onClick={(evento) => {
+                          evento.stopPropagation()
+                          cerrarCard()
+                        }}
+                      >
+                        {tratamientos.verMenos}
+                      </button>
                     </span>
-                  </button>
+                  </div>
                 </Reveal>
               )
             })}

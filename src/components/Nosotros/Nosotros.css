@@ -165,55 +165,41 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .nosotros__primera-visita-paso {
   position: relative;
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: 0 1.5rem;
-  padding-bottom: 2.25rem;
-}
-
-.nosotros__primera-visita-paso:last-child {
-  padding-bottom: 0;
-}
-
-.nosotros__primera-visita-paso:not(:last-child)::before {
-  content: '';
-  position: absolute;
-  left: 1.1875rem;
-  top: 2.5rem;
-  bottom: 0;
-  width: 2px;
-  background: #e0e0e0;
-  transform: translateX(-50%);
-}
-
-.nosotros__primera-visita-marcador {
-  position: relative;
-  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fafafa 0%, #f3f3f3 100%);
+  border-left: 4px solid var(--rojo);
+  padding: 1.35rem 1.15rem 1.4rem;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 22px rgba(0, 0, 0, 0.06);
 }
 
 .nosotros__primera-visita-numero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.375rem;
-  height: 2.375rem;
-  background: var(--rojo);
-  color: var(--blanco);
+  position: absolute;
+  top: 0.35rem;
+  right: 0.65rem;
   font-family: 'Oswald', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 4.25rem;
+  font-weight: 700;
   line-height: 1;
+  letter-spacing: -0.02em;
+  color: rgba(211, 47, 47, 0.09);
+  pointer-events: none;
+  user-select: none;
 }
 
 .nosotros__primera-visita-paso-contenido {
+  position: relative;
+  z-index: 1;
   min-width: 0;
-  padding-top: 0.2rem;
+  max-width: 92%;
 }
 
 .nosotros__primera-visita-paso-contenido p {
@@ -230,7 +216,9 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--negro);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.55rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(211, 47, 47, 0.22);
 }
 
 @media (min-width: 768px) {
@@ -240,40 +228,37 @@
   }
 
   .nosotros__primera-visita-encabezado {
-    margin-bottom: 3rem;
+    margin-bottom: 2.75rem;
+    max-width: 42rem;
   }
 
   .nosotros__primera-visita-pasos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0 2.5rem;
-    align-items: start;
+    gap: 1.35rem;
+    align-items: stretch;
   }
 
   .nosotros__primera-visita-paso {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 1.5rem 1.25rem 1.55rem;
   }
 
-  .nosotros__primera-visita-paso:not(:last-child)::before {
-    top: 1.1875rem;
-    left: 2.375rem;
-    right: -2.5rem;
-    bottom: auto;
-    width: auto;
-    height: 2px;
-    transform: none;
-    background: #e0e0e0;
+  .nosotros__primera-visita-paso:nth-child(2) {
+    transform: translateY(1.35rem);
   }
 
-  .nosotros__primera-visita-marcador {
-    margin-bottom: 1.25rem;
+  .nosotros__primera-visita-numero {
+    font-size: 5rem;
+    top: 0.5rem;
+    right: 0.75rem;
   }
 
   .nosotros__primera-visita-paso-contenido {
-    padding-top: 0;
-    padding-right: 0.5rem;
+    max-width: none;
+    flex: 1;
   }
 
   .nosotros__primera-visita-paso-contenido p {
@@ -283,6 +268,7 @@
   .nosotros__primera-visita-paso-titulo {
     font-size: 1.05rem;
     margin-bottom: 0.65rem;
+    padding-bottom: 0.55rem;
   }
 }
 
@@ -292,11 +278,17 @@
   }
 
   .nosotros__primera-visita-pasos {
-    gap: 0 3rem;
+    gap: 1.65rem;
   }
 
-  .nosotros__primera-visita-paso:not(:last-child)::before {
-    right: -3rem;
+  .nosotros__primera-visita-paso:nth-child(2) {
+    transform: translateY(1.65rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nosotros__primera-visita-paso:nth-child(2) {
+    transform: none;
   }
 }
 

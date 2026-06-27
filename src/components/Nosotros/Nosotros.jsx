@@ -115,11 +115,9 @@ function Nosotros() {
           <ol className="nosotros__primera-visita-pasos">
             {nosotros.primeraVisita.pasos.map((paso, i) => (
               <li key={paso.titulo} className="nosotros__primera-visita-paso">
-                <div className="nosotros__primera-visita-marcador">
-                  <span className="nosotros__primera-visita-numero" aria-hidden="true">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                </div>
+                <span className="nosotros__primera-visita-numero" aria-hidden="true">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
                 <div className="nosotros__primera-visita-paso-contenido">
                   <h4 className="nosotros__primera-visita-paso-titulo">{paso.titulo}</h4>
                   <p>

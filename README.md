@@ -1,16 +1,49 @@
-# React + Vite
+# Control Total Fumigaciones Paz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web corporativo de Control Total Fumigaciones Paz — empresa de control de plagas, desinfección y saneamiento en CABA.
 
-Currently, two official plugins are available:
+## Desarrollo local
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Build de producción
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## Variables de entorno
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Copiá `.env.example` a `.env` y definí la URL pública del sitio:
+
+```
+VITE_SITE_URL=https://www.tudominio.com.ar
+```
+
+Esto activa canonical, Open Graph, Twitter Cards y datos estructurados con URLs absolutas.
+
+## Archivos pendientes
+
+Agregá estos archivos en `public/assets/images/` si aún no existen:
+
+- `logo.png` — logo de la empresa (usado en navbar y hero)
+
+## SEO incluido
+
+- Meta tags optimizados (description, robots, geo)
+- Open Graph y Twitter Cards
+- JSON-LD (`PestControlService` + `WebSite`)
+- `robots.txt` y `sitemap.xml` (actualizá la URL en el sitemap al publicar)
+
+## Scripts
+
+| Comando        | Descripción              |
+|----------------|--------------------------|
+| `npm run dev`  | Servidor de desarrollo   |
+| `npm run build`| Build para producción    |
+| `npm run lint` | Verificación con ESLint  |
+| `npm run preview` | Vista previa del build |

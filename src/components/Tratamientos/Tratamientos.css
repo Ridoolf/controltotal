@@ -1,3 +1,7 @@
+/* =============================================
+   TRATAMIENTOS — Grid de cards interactivas
+   ============================================= */
+
 .tratamientos {
   position: relative;
   background-color: #c62828;
@@ -79,18 +83,10 @@
 
 .tratamiento-card {
   min-width: 0;
-  padding: 0.45rem;
-  background: rgba(0, 0, 0, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.22),
-    0 6px 12px -2px rgba(0, 0, 0, 0.26),
-    0 14px 28px -4px rgba(0, 0, 0, 0.24),
-    0 22px 40px -8px rgba(0, 0, 0, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  transition:
-    border-color var(--hover-duracion) var(--hover-ease),
-    box-shadow var(--hover-duracion) var(--hover-ease);
+  padding: 0;
+  background: transparent;
+  border: none;
+  transition: transform var(--hover-duracion) var(--hover-ease);
 }
 
 .tratamiento-card__btn {
@@ -106,7 +102,13 @@
   color: var(--blanco);
   font-family: inherit;
   background: #1a1a1a;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 12px 28px rgba(0, 0, 0, 0.26),
+    0 24px 48px rgba(0, 0, 0, 0.18);
+  transition:
+    box-shadow var(--hover-duracion) var(--hover-ease),
+    transform var(--hover-duracion) var(--hover-ease);
 }
 
 .tratamiento-card:nth-child(6n + 1) .tratamiento-card__img {
@@ -117,7 +119,7 @@
   object-position: 72% center;
 }
 
-.tratamiento-card:nth-child(6n + 3) .tratamiento-card__img {
+.tratamiento-card:nth-child(6n + 3) .tratamiento-card__img:not([style*='object-position']) {
   object-position: center top;
 }
 
@@ -129,8 +131,13 @@
   object-position: center 35%;
 }
 
-.tratamiento-card:nth-child(6n) .tratamiento-card__img {
+.tratamiento-card:nth-child(6n) .tratamiento-card__img:not(.tratamiento-card__img--completa) {
   object-position: 60% 25%;
+}
+
+.tratamiento-card__img--completa {
+  object-fit: contain;
+  object-position: center center;
 }
 
 .tratamiento-card__btn:focus-visible {
@@ -244,13 +251,15 @@
 @media (hover: hover) {
   .tratamiento-card:has(.tratamiento-card__btn:hover),
   .tratamiento-card:has(.tratamiento-card__btn--activo) {
-    border-color: rgba(255, 255, 255, 0.32);
+    transform: translateY(-5px);
+  }
+
+  .tratamiento-card:has(.tratamiento-card__btn:hover) .tratamiento-card__btn,
+  .tratamiento-card:has(.tratamiento-card__btn--activo) .tratamiento-card__btn {
     box-shadow:
-      0 2px 4px rgba(0, 0, 0, 0.24),
-      0 10px 20px -2px rgba(0, 0, 0, 0.3),
-      0 18px 36px -4px rgba(0, 0, 0, 0.26),
-      0 28px 48px -8px rgba(0, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      0 8px 16px rgba(0, 0, 0, 0.24),
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 36px 64px rgba(0, 0, 0, 0.22);
   }
 
   .tratamiento-card__btn:hover .tratamiento-card__detalle,
@@ -271,13 +280,14 @@
 
 @media (hover: none) {
   .tratamiento-card:has(.tratamiento-card__btn--activo) {
-    border-color: rgba(255, 255, 255, 0.32);
+    transform: translateY(-3px);
+  }
+
+  .tratamiento-card:has(.tratamiento-card__btn--activo) .tratamiento-card__btn {
     box-shadow:
-      0 2px 4px rgba(0, 0, 0, 0.24),
-      0 10px 20px -2px rgba(0, 0, 0, 0.3),
-      0 18px 36px -4px rgba(0, 0, 0, 0.26),
-      0 28px 48px -8px rgba(0, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      0 8px 16px rgba(0, 0, 0, 0.24),
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 36px 64px rgba(0, 0, 0, 0.22);
   }
 
   .tratamiento-card__btn--activo .tratamiento-card__detalle {
@@ -293,13 +303,14 @@
   }
 }
 
+/* ── Mobile: cards expandibles ── */
 @media (max-width: 639px) {
   .tratamientos__lista {
     gap: 0.8rem;
   }
 
   .tratamiento-card {
-    padding: 0.35rem;
+    padding: 0;
   }
 
   .tratamiento-card__btn {
@@ -309,7 +320,6 @@
     min-height: 5.75rem;
     overflow: hidden;
     background: #0e0e0e;
-    border-left: 3px solid var(--rojo);
     transition: min-height 0.42s var(--hover-ease);
   }
 
@@ -337,6 +347,18 @@
     object-fit: cover;
     object-position: center center;
     transition: height 0.42s var(--hover-ease), min-height 0.42s var(--hover-ease);
+  }
+
+  .tratamiento-card__img--completa {
+    height: 155%;
+    min-height: 155%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .tratamiento-card__btn--activo .tratamiento-card__img--completa {
+    height: 100%;
+    min-height: 100%;
   }
 
   .tratamiento-card__btn--activo .tratamiento-card__img {
@@ -499,6 +521,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .tratamiento-card,
+  .tratamiento-card:has(.tratamiento-card__btn:hover),
+  .tratamiento-card:has(.tratamiento-card__btn--activo) {
+    transform: none;
+    transition: none;
+  }
+
   .tratamiento-card__img {
     transition: none;
   }

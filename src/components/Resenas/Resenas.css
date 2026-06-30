@@ -91,6 +91,7 @@
   color: var(--rojo-oscuro);
 }
 
+/* ── Carrusel y viewport arrastrable ── */
 .resenas__carrusel-wrap {
   position: relative;
 }

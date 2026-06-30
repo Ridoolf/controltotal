@@ -1,3 +1,8 @@
+/* =============================================
+   NAVBAR — Barra de navegación sticky
+   ============================================= */
+
+/* ── Estructura principal ── */
 .navbar {
   position: sticky;
   top: 0;
@@ -14,6 +19,7 @@
   min-height: var(--navbar-altura);
 }
 
+/* ── Logo y marca ── */
 .navbar__logo {
   display: flex;
   align-items: center;
@@ -118,7 +124,7 @@
 }
 
 .navbar__nav--abierto {
-  max-height: 280px;
+  max-height: 320px;
   opacity: 1;
   visibility: visible;
   padding: 1rem 1.5rem 1.5rem;
@@ -161,6 +167,10 @@
   transition-delay: 0.18s;
 }
 
+.navbar__nav--abierto .navbar__lista li:nth-child(5) {
+  transition-delay: 0.22s;
+}
+
 .navbar__lista a {
   display: inline-block;
   font-weight: 500;
@@ -190,6 +200,7 @@
   }
 }
 
+/* ── Desktop: menú horizontal ── */
 @media (min-width: 768px) {
   .navbar__toggle {
     display: none;
@@ -218,6 +229,7 @@
   }
 }
 
+/* ── Reducir animaciones ── */
 @media (prefers-reduced-motion: reduce) {
   .navbar__nav,
   .navbar__toggle span,

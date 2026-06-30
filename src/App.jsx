@@ -7,12 +7,17 @@ import Contacto from './components/Contacto/Contacto'
 import Footer from './components/Footer/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat'
 import Reveal from './components/Reveal/Reveal'
+import JsonLd from './components/Seo/JsonLd'
 
 function App() {
   return (
     <>
+      <JsonLd />
+      <a href="#contenido-principal" className="skip-link">
+        Ir al contenido principal
+      </a>
       <Navbar />
-      <main>
+      <main id="contenido-principal">
         <Hero />
         <Nosotros />
         <Tratamientos />

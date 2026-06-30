@@ -10,8 +10,8 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="contenedor navbar__contenedor">
-        <a href="#inicio" className="navbar__logo" onClick={cerrarMenu}>
-          <img src={site.logo} alt="" className="navbar__logo-img" />
+        <a href="#inicio" className="navbar__logo" onClick={cerrarMenu} aria-label={`${site.nombre} — ir al inicio`}>
+          <img src={site.logo} alt={site.logoAlt} className="navbar__logo-img" width="52" height="52" />
           <div className="navbar__logo-texto">
             <span className="navbar__logo-nombre">control total</span>
             <span className="navbar__logo-sub">Fumigaciones Paz</span>
@@ -30,7 +30,7 @@ function Navbar() {
           <span></span>
         </button>
 
-        <nav className={`navbar__nav ${menuAbierto ? 'navbar__nav--abierto' : ''}`}>
+        <nav className={`navbar__nav ${menuAbierto ? 'navbar__nav--abierto' : ''}`} aria-label="Secciones del sitio">
           <ul className="navbar__lista">
             {navLinks.map((link) => (
               <li key={link.href}>

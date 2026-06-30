@@ -1,9 +1,11 @@
 /* =============================================
-   Estilos globales — Control Total Fumigaciones Paz
+   ESTILOS GLOBALES — Control Total Fumigaciones Paz
+   Variables, reset, tipografía y utilidades
    ============================================= */
 
 @import './styles/enlace-btn.css';
 
+/* ── Variables de diseño ── */
 :root {
   --rojo: #d32f2f;
   --rojo-oscuro: #b71c1c;
@@ -20,6 +22,7 @@
   --hover-sombra-roja: 0 6px 20px rgba(211, 47, 47, 0.35);
 }
 
+/* ── Reset base ── */
 *,
 *::before,
 *::after {
@@ -59,6 +62,27 @@ button {
   font-family: inherit;
 }
 
+/* ── Accesibilidad: enlace para saltar al contenido ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.65rem 1rem;
+  background: var(--negro);
+  color: var(--blanco);
+  font-weight: 600;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--rojo);
+  outline-offset: 2px;
+}
+
+/* ── Transiciones globales de enlaces y botones ── */
 @media (prefers-reduced-motion: no-preference) {
   a,
   button {
@@ -80,6 +104,7 @@ button:focus-visible {
   }
 }
 
+/* ── Tipografía de títulos ── */
 h1,
 h2,
 h3 {
@@ -100,6 +125,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
+/* ── Texto resaltado (usado con TextoConResaltado) ── */
 .texto-resaltado {
   font-weight: 600;
 }
@@ -110,28 +136,16 @@ p:last-child {
 }
 
 .nosotros__cuerpo .texto-resaltado,
-.nosotros__primera-visita-paso-contenido .texto-resaltado,
-.nosotros__primera-visita-subtitulo .texto-resaltado,
+.nosotros__visita-lead .texto-resaltado,
+.nosotros__visita-bloque .texto-resaltado,
 .nosotros__habilitacion-texto .texto-resaltado {
   color: var(--negro);
 }
 
-/* Contenedor reutilizable */
+/* ── Contenedor reutilizable de secciones ── */
 .contenedor {
   width: 100%;
   max-width: var(--max-ancho);
   margin: 0 auto;
   padding: 0 1.5rem;
-}
-
-/* Placeholder de imagen — reemplazar cuando lleguen las fotos */
-.img-placeholder {
-  background: #ddd;
-  color: #888;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 0.85rem;
-  padding: 1rem;
 }

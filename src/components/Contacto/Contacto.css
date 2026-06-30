@@ -1,3 +1,7 @@
+/* =============================================
+   CONTACTO — Canales, ubicación y mapa
+   ============================================= */
+
 .contacto {
   padding: 4rem 0;
   background: var(--gris-claro);
@@ -9,6 +13,7 @@
   margin-bottom: 2rem;
 }
 
+/* ── Grid de WhatsApp, email e Instagram ── */
 .contacto__canales {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -162,6 +167,7 @@
   background: #9a1818;
 }
 
+/* ── Mapa embebido de Google ── */
 .contacto__mapa {
   min-height: 320px;
   background: #ddd;

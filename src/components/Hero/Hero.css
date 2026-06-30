@@ -1,6 +1,12 @@
+/* =============================================
+   HERO — Portada principal con fondo e imagen
+   ============================================= */
+
+/* ── Sección y fondo ── */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: calc(100vh - var(--navbar-altura));
+  min-height: calc(100dvh - var(--navbar-altura));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -59,6 +65,7 @@
   }
 }
 
+/* ── Texto, título y CTA ── */
 .hero__texto {
   max-width: 600px;
 }
@@ -158,6 +165,7 @@
   filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.45));
 }
 
+/* ── Desktop: layout en dos columnas ── */
 @media (min-width: 768px) {
   .hero__contenido {
     flex-direction: row;

@@ -1,5 +1,9 @@
+/* =============================================
+   NOSOTROS — Sección acerca de, habilitación y primera visita
+   ============================================= */
+
 .nosotros {
-  padding: 4rem 0;
+  padding: 4rem 0 4rem;
   background: var(--blanco);
 }
 
@@ -135,160 +139,210 @@
   }
 }
 
-.nosotros__primera-visita {
+/* ── Primera visita: capítulo editorial (intro + cuerpo) ── */
+.nosotros__visita {
   margin-top: 3.5rem;
   padding-top: 2.5rem;
   border-top: 1px solid #ddd;
+  display: grid;
+  gap: 2rem;
 }
 
-.nosotros__primera-visita-encabezado {
-  max-width: 36rem;
-  margin-bottom: 2.5rem;
-}
-
-.nosotros__primera-visita-titulo {
-  font-size: 1.75rem;
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.75rem;
+.nosotros__visita-titulo {
+  font-size: 1.55rem;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.7rem;
   border-bottom: 3px solid var(--rojo);
   display: inline-block;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
 }
 
-.nosotros__primera-visita-subtitulo {
-  font-size: 1rem;
-  line-height: 1.65;
-  color: var(--gris);
+.nosotros__visita-lead {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #5c5c5c;
   margin: 0;
+  max-width: 22rem;
 }
 
-.nosotros__primera-visita-pasos {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.nosotros__primera-visita-paso {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(145deg, #fafafa 0%, #f3f3f3 100%);
-  border-left: 4px solid var(--rojo);
-  padding: 1.35rem 1.15rem 1.4rem;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 22px rgba(0, 0, 0, 0.06);
-}
-
-.nosotros__primera-visita-numero {
-  position: absolute;
-  top: 0.35rem;
-  right: 0.65rem;
-  font-family: 'Oswald', sans-serif;
-  font-size: 4.25rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: rgba(211, 47, 47, 0.09);
-  pointer-events: none;
-  user-select: none;
-}
-
-.nosotros__primera-visita-paso-contenido {
-  position: relative;
-  z-index: 1;
+.nosotros__visita-cuerpo {
   min-width: 0;
-  max-width: 92%;
 }
 
-.nosotros__primera-visita-paso-contenido p {
+.nosotros__visita-bloque {
+  margin-bottom: 1.75rem;
+}
+
+.nosotros__visita-bloque:last-child {
+  margin-bottom: 0;
+}
+
+.nosotros__visita-bloque-btn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.nosotros__visita-flecha {
+  flex-shrink: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-top: 0.35rem;
+  border-right: 2px solid var(--rojo);
+  border-bottom: 2px solid var(--rojo);
+  transform: rotate(45deg);
+  transition: transform var(--hover-duracion) var(--hover-ease);
+}
+
+.nosotros__visita-bloque--abierto .nosotros__visita-flecha {
+  transform: rotate(-135deg);
+  margin-top: 0.5rem;
+}
+
+.nosotros__visita-bloque-titulo {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--negro);
+  margin: 0;
+  padding: 0.1rem 0 0.1rem 0.85rem;
+  border-left: 3px solid var(--rojo);
+  line-height: 1.35;
+}
+
+.nosotros__visita-bloque-panel {
+  overflow: hidden;
+}
+
+.nosotros__visita-bloque-panel p {
   font-size: 0.95rem;
   line-height: 1.65;
   color: var(--gris);
   margin: 0;
+  padding-left: calc(0.85rem + 3px);
 }
 
-.nosotros__primera-visita-paso-titulo {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--negro);
-  margin: 0 0 0.55rem;
-  padding-bottom: 0.45rem;
-  border-bottom: 1px solid rgba(211, 47, 47, 0.22);
+@media (max-width: 767px) {
+  .nosotros__visita-cuerpo {
+    margin-top: 0.35rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ececec;
+  }
+
+  .nosotros__visita-bloque {
+    margin-bottom: 0;
+    padding: 0.95rem 0;
+    border-bottom: 1px solid #ececec;
+  }
+
+  .nosotros__visita-bloque:first-child {
+    padding-top: 0.65rem;
+  }
+
+  .nosotros__visita-bloque:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .nosotros__visita-bloque-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.32s var(--hover-ease);
+  }
+
+  .nosotros__visita-bloque--abierto .nosotros__visita-bloque-panel {
+    grid-template-rows: 1fr;
+  }
+
+  .nosotros__visita-bloque-panel > p {
+    min-height: 0;
+    padding-top: 0.75rem;
+  }
 }
 
 @media (min-width: 768px) {
-  .nosotros__primera-visita {
+  .nosotros__visita {
     margin-top: 4rem;
     padding-top: 3rem;
+    grid-template-columns: minmax(11rem, 1fr) minmax(0, 2.4fr);
+    gap: 2.5rem 3.5rem;
+    align-items: start;
   }
 
-  .nosotros__primera-visita-encabezado {
-    margin-bottom: 2.75rem;
-    max-width: 42rem;
+  .nosotros__visita-titulo {
+    font-size: 1.75rem;
+    display: block;
   }
 
-  .nosotros__primera-visita-pasos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.35rem;
-    align-items: stretch;
+  .nosotros__visita-lead {
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
 
-  .nosotros__primera-visita-paso {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    padding: 1.5rem 1.25rem 1.55rem;
+  .nosotros__visita-bloque {
+    margin-bottom: 2.25rem;
   }
 
-  .nosotros__primera-visita-paso:nth-child(2) {
-    transform: translateY(1.35rem);
+  .nosotros__visita-bloque:last-child {
+    margin-bottom: 0;
   }
 
-  .nosotros__primera-visita-numero {
-    font-size: 5rem;
-    top: 0.5rem;
-    right: 0.75rem;
+  .nosotros__visita-bloque-btn {
+    pointer-events: none;
+    cursor: default;
+    margin-bottom: 0.6rem;
   }
 
-  .nosotros__primera-visita-paso-contenido {
-    max-width: none;
-    flex: 1;
+  .nosotros__visita-flecha {
+    display: none;
   }
 
-  .nosotros__primera-visita-paso-contenido p {
+  .nosotros__visita-bloque-titulo {
+    font-size: 0.92rem;
+    letter-spacing: 0.055em;
+  }
+
+  .nosotros__visita-bloque-panel p {
     font-size: 1rem;
-  }
-
-  .nosotros__primera-visita-paso-titulo {
-    font-size: 1.05rem;
-    margin-bottom: 0.65rem;
-    padding-bottom: 0.55rem;
+    max-width: 38rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .nosotros__primera-visita-titulo {
+  .nosotros__visita-titulo {
     font-size: 2rem;
   }
 
-  .nosotros__primera-visita-pasos {
-    gap: 1.65rem;
+  .nosotros__visita {
+    gap: 3rem 4rem;
   }
 
-  .nosotros__primera-visita-paso:nth-child(2) {
-    transform: translateY(1.65rem);
+  .nosotros__visita-bloque-titulo {
+    font-size: 0.95rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nosotros__primera-visita-paso:nth-child(2) {
-    transform: none;
+  .nosotros__visita-bloque-panel {
+    transition: none;
+  }
+
+  .nosotros__visita-flecha {
+    transition: none;
   }
 }
 

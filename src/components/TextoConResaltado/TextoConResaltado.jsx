@@ -11,14 +11,6 @@ function normalizarPartes(contenido) {
     })
   }
 
-  if (contenido?.antes !== undefined) {
-    return [
-      { tipo: 'texto', valor: contenido.antes },
-      { tipo: 'resaltado', valor: contenido.destacado },
-      { tipo: 'texto', valor: contenido.despues },
-    ]
-  }
-
   return [{ tipo: 'texto', valor: String(contenido) }]
 }
 

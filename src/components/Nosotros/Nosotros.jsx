@@ -6,9 +6,19 @@ import './Nosotros.css'
 
 function Nosotros() {
   const [expandido, setExpandido] = useState(false)
+  const [pasosVisitaAbiertos, setPasosVisitaAbiertos] = useState(() => new Set())
   const parrafosVisibles = nosotros.parrafos.slice(0, nosotros.parrafosVisibles)
   const parrafosExtra = nosotros.parrafos.slice(nosotros.parrafosVisibles)
   const hayMas = parrafosExtra.length > 0
+
+  const togglePasoVisita = (titulo) => {
+    setPasosVisitaAbiertos((prev) => {
+      const next = new Set(prev)
+      if (next.has(titulo)) next.delete(titulo)
+      else next.add(titulo)
+      return next
+    })
+  }
 
   return (
     <section id="nosotros" className="nosotros">
@@ -66,6 +76,45 @@ function Nosotros() {
       </div>
 
       <Reveal delay={80}>
+        <div className="contenedor nosotros__visita">
+          <div className="nosotros__visita-intro">
+            <h3 className="nosotros__visita-titulo">{nosotros.primeraVisita.titulo}</h3>
+            <p className="nosotros__visita-lead">
+              <TextoConResaltado contenido={nosotros.primeraVisita.subtitulo} />
+            </p>
+          </div>
+
+          <div className="nosotros__visita-cuerpo">
+            {nosotros.primeraVisita.pasos.map((paso) => {
+              const abierto = pasosVisitaAbiertos.has(paso.titulo)
+
+              return (
+                <div
+                  key={paso.titulo}
+                  className={`nosotros__visita-bloque${abierto ? ' nosotros__visita-bloque--abierto' : ''}`}
+                >
+                  <button
+                    type="button"
+                    className="nosotros__visita-bloque-btn"
+                    onClick={() => togglePasoVisita(paso.titulo)}
+                    aria-expanded={abierto}
+                  >
+                    <span className="nosotros__visita-bloque-titulo">{paso.titulo}</span>
+                    <span className="nosotros__visita-flecha" aria-hidden="true" />
+                  </button>
+                  <div className="nosotros__visita-bloque-panel">
+                    <p>
+                      <TextoConResaltado contenido={paso.texto} />
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </Reveal>
+
+      <Reveal delay={100}>
         <div className="contenedor">
           <div className="nosotros__habilitacion">
             <span className="nosotros__habilitacion-icono" aria-hidden="true">
@@ -100,33 +149,6 @@ function Nosotros() {
               </ul>
             </div>
           </div>
-        </div>
-      </Reveal>
-
-      <Reveal delay={100}>
-        <div className="contenedor nosotros__primera-visita">
-          <header className="nosotros__primera-visita-encabezado">
-            <h3 className="nosotros__primera-visita-titulo">{nosotros.primeraVisita.titulo}</h3>
-            <p className="nosotros__primera-visita-subtitulo">
-              <TextoConResaltado contenido={nosotros.primeraVisita.subtitulo} />
-            </p>
-          </header>
-
-          <ol className="nosotros__primera-visita-pasos">
-            {nosotros.primeraVisita.pasos.map((paso, i) => (
-              <li key={paso.titulo} className="nosotros__primera-visita-paso">
-                <span className="nosotros__primera-visita-numero" aria-hidden="true">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div className="nosotros__primera-visita-paso-contenido">
-                  <h4 className="nosotros__primera-visita-paso-titulo">{paso.titulo}</h4>
-                  <p>
-                    <TextoConResaltado contenido={paso.texto} />
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
         </div>
       </Reveal>
     </section>

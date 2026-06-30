@@ -2,6 +2,8 @@ export const site = {
   nombre: 'Control Total Fumigaciones Paz',
   subtitulo: 'Manejo integral de plagas',
   logo: '/assets/images/logo.png',
+  logoAlt: 'Logo de Control Total Fumigaciones Paz',
+  url: import.meta.env.VITE_SITE_URL || '',
   whatsapp: '5491140233561',
   whatsappDisplay: '+54 9 11 4023-3561',
   instagram: 'control.total.fumigaciones.paz',
@@ -10,12 +12,20 @@ export const site = {
     nombre: 'Tu Espacio Online',
     url: 'https://instagram.com/tu_espacio.online',
   },
+  seo: {
+    titulo:
+      'Fumigaciones en CABA | Control Total Fumigaciones Paz — Control de plagas y desinfección',
+    descripcion:
+      'Empresa familiar de fumigaciones en Buenos Aires. Control de plagas, desinfección, desratización y limpieza de tanques. Productos residuales e inoloros. Habilitada por GCBA. 20 años de experiencia.',
+    imagenSocial: '/assets/images/hero-fondo.png',
+  },
 }
 
 export const navLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Tratamientos', href: '#tratamientos' },
+  { label: 'Reseñas', href: '#resenas' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
@@ -41,7 +51,7 @@ export const hero = {
 
 export const nosotros = {
   titulo: 'Acerca de Nosotros',
-  imagen: '/assets/images/nosotros.png',
+  imagen: '/assets/images/sobrenosotros.jpeg',
   imagenAlt: 'Profesional con traje de protección realizando fumigación en un hogar',
   parrafosVisibles: 2,
   verMas: 'Ver más',
@@ -127,7 +137,7 @@ export const nosotros = {
           { resaltado: 'brindo recomendaciones prácticas y personalizadas' },
           ' orientadas a la prevención y el control. Considero que el éxito del tratamiento depende del ',
           { resaltado: 'trabajo conjunto' },
-          ' entre el cliente y nosotros',
+          ' entre el cliente y nosotros.',
         ],
       },
     ],
@@ -161,10 +171,10 @@ export const tratamientos = {
   items: [
     {
       nombre: 'Desinfección',
-      imagen: '/assets/images/nosotros.png',
+      imagen: '/assets/images/desinfeccion.png',
       descripcion: [
         'Se utilizan ',
-        { resaltado: 'amónios cuaternarios' },
+        { resaltado: 'amonios cuaternarios' },
         ' que abarcan ',
         { resaltado: 'bacterias, hongos y virus' },
         ' en superficies y en el aire. Recomendado para lugares con gran cantidad de gente.',
@@ -172,6 +182,8 @@ export const tratamientos = {
     },
     {
       nombre: 'Desratización',
+      imagen: '/assets/images/desratizacion.jpeg',
+      imagenEncaje: 'completa',
       descripcion: [
         { resaltado: 'Inspección previa' },
         ' para identificar origen, intensidad, recorridos y refugios. ',
@@ -184,17 +196,20 @@ export const tratamientos = {
       ],
     },
     {
-      nombre: 'Oficinas y Empresas',
+      nombre: 'Oficinas, Empresas y Edificios',
+      imagen: '/assets/images/oficinasempresas.png',
+      imagenPosicion: 'center bottom',
       descripcion: [
         'Control de plagas en espacios corporativos. ',
         { resaltado: 'Tratamientos programados' },
         ' para mantener ambientes de trabajo ',
-        { resaltado: 'libres de insectos.' },
+        { resaltado: 'libres de insectos' },
         '.',
       ],
     },
     {
       nombre: 'Restaurantes y Gastronomía',
+      imagen: '/assets/images/restygast.jpeg',
       descripcion: [
         { resaltado: 'Especialistas en el sector gastronómico' },
         ': control de plagas y saneamiento para restaurantes, bares, cafeterías y cocinas industriales. Tratamientos ',
@@ -206,6 +221,7 @@ export const tratamientos = {
     },
     {
       nombre: 'Limpieza de Tanques',
+      imagen: '/assets/images/limpiezatanques.jpeg',
       descripcion: [
         'Limpieza y desinfección de tanques de agua. De tanque sucio a tanque limpio con ',
         { resaltado: 'protocolos profesionales' },
@@ -214,9 +230,11 @@ export const tratamientos = {
     },
     {
       nombre: 'Control de Plagas',
+      imagen: '/assets/images/controldeplagas.png',
+      imagenPosicion: 'center 90%',
       descripcion: [
         { resaltado: 'Tratamiento integral' },
-        ' para comercios, oficinas y administraciones de edificios. Control de ',
+        ' Control de ',
         { resaltado: 'cucarachas, hormigas, pulgas, pulgas de papel, moscas, moscas de fruta, mosquitos y polillas' },
         ', y de cualquier otra plaga que ingrese desde el exterior o por vías de tránsito.',
       ],
@@ -244,7 +262,7 @@ export const resenas = {
     {
       nombre: 'Alejandra Padilla',
       meta: '5 reseñas',
-      fecha: 'Hace 3 meses',
+      fecha: 'Hace 2 meses',
       estrellas: 5,
       texto:
         'Servicio excepcional. El producto que utiliza erradicó a los bichos en la primera pasada que hizo en la oficina. Muy conforme y los súper recomiendo. Me pasó el contacto mi amiga que tenía también una plaga y los fumigadores anteriores no se lo resolvían. Son excelentes.',
@@ -252,7 +270,7 @@ export const resenas = {
     {
       nombre: 'Andrea',
       meta: 'Local Guide · 46 reseñas',
-      fecha: 'Hace 3 meses',
+      fecha: 'Hace 5 meses',
       estrellas: 5,
       texto:
         'Excelente servicio. Hace años que confiamos en ellos para la fumigación y siempre han respondido con puntualidad y eficacia. La comunicación es muy fluida y el asesoramiento técnico es de primera. Es un placer trabajar con gente tan comprometida. Sumamente recomendable.',
@@ -268,7 +286,7 @@ export const resenas = {
     {
       nombre: 'Maximiliano Kowalski',
       meta: '1 reseña',
-      fecha: 'Hace 3 meses',
+      fecha: 'Hace 4 meses',
       estrellas: 5,
       texto:
         'Somos una clínica de la salud y el servicio y profesionalismo de Control Total no tiene comparación. Realizamos fumigaciones y limpiezas de tanques de agua con ellos y siempre fue una respuesta inmediata y un trabajo impoluto. Super recomendable.',
@@ -291,7 +309,7 @@ export const resenas = {
     {
       nombre: 'Ramón Andrés Arriola',
       meta: '2 reseñas',
-      fecha: 'Hace 3 meses',
+      fecha: 'Hace 2 meses',
       estrellas: 5,
       texto: 'Excelente servicio, estoy muy conforme, la mejor.',
     },
@@ -307,7 +325,7 @@ export const resenas = {
 }
 
 export const contacto = {
-  titulo: 'Contactanos',
+  titulo: 'Contáctanos',
   ubicacionTitulo: 'Encontranos en',
   sedes: [
     {

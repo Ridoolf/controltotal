@@ -1,3 +1,7 @@
+/* =============================================
+   REVEAL — Animación de entrada al hacer scroll
+   ============================================= */
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);

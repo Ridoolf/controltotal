@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { contacto, hero, site, tratamientos } from '../../data/content'
+import { contacto, hero, tratamientos } from '../../data/content'
+import { urlWhatsApp } from '../../utils/enlaces'
 import { IconContacto, IconWhatsApp } from '../Icons/LinkIcons'
 import Reveal from '../Reveal/Reveal'
 import TextoConResaltado from '../TextoConResaltado/TextoConResaltado'
@@ -7,7 +8,6 @@ import './Tratamientos.css'
 
 function Tratamientos() {
   const [activo, setActivo] = useState(null)
-  const whatsappUrl = `https://wa.me/${site.whatsapp}`
 
   const abrirCard = (index) => {
     setActivo(index)
@@ -61,7 +61,15 @@ function Tratamientos() {
                   >
                     <span className="tratamiento-card__media" aria-hidden="true">
                       <img
-                        className="tratamiento-card__img"
+                        className={[
+                          'tratamiento-card__img',
+                          item.imagenEncaje === 'completa' && 'tratamiento-card__img--completa',
+                        ]
+                          .filter(Boolean)
+                          .join(' ')}
+                        style={
+                          item.imagenPosicion ? { objectPosition: item.imagenPosicion } : undefined
+                        }
                         src={imagen}
                         alt=""
                         loading="lazy"
@@ -105,7 +113,7 @@ function Tratamientos() {
               {contacto.titulo}
             </a>
             <a
-              href={whatsappUrl}
+              href={urlWhatsApp(false)}
               className="tratamientos__cta tratamientos__cta--primario"
               target="_blank"
               rel="noopener noreferrer"

@@ -1,3 +1,7 @@
+/* =============================================
+   ENLACE-BTN — Iconos dentro de botones y enlaces
+   ============================================= */
+
 .enlace-btn__icono {
   flex-shrink: 0;
   display: inline-flex;

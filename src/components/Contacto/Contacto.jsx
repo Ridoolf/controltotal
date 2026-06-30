@@ -1,11 +1,10 @@
 import { contacto, site } from '../../data/content'
+import { urlWhatsApp } from '../../utils/enlaces'
 import { IconEmail, IconGoogle, IconInstagram, IconWhatsApp } from '../Icons/LinkIcons'
 import Reveal from '../Reveal/Reveal'
 import './Contacto.css'
 
 function Contacto() {
-  const whatsappUrl = `https://wa.me/${site.whatsapp}`
-
   return (
     <section id="contacto" className="contacto">
       <div className="contenedor">
@@ -16,7 +15,7 @@ function Contacto() {
         <Reveal delay={50}>
           <div className="contacto__canales">
             <a
-              href={whatsappUrl}
+              href={urlWhatsApp(false)}
               className="contacto__canal contacto__canal--whatsapp"
               target="_blank"
               rel="noopener noreferrer"
